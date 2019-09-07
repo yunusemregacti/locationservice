@@ -5,39 +5,39 @@ build:
 # compile  
     - script:
         name: restore
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           dotnet restore
     - script:
         name: build
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           dotnet build  
 # unit tests          
     - script:
         name: test-restore
-        cwd: test/StatlerWaldorfCorp.LocationService.Tests
+        cwd: StatlerWaldorfCorp.LocationService.Tests
         code: |
            dotnet restore
     - script:
         name: test-build
-        cwd: test/StatlerWaldorfCorp.LocationService.Tests
+        cwd: StatlerWaldorfCorp.LocationService.Tests
         code: |
           dotnet build
     - script:
         name: test-run
-        cwd: test/StatlerWaldorfCorp.LocationService.Tests
+        cwd: StatlerWaldorfCorp.LocationService.Tests
         code: |
           dotnet test
 # packaging
     - script:
         name: publish
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           dotnet publish -o publish  
     - script:
         name: copy binary
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           cp -r . $WERCKER_OUTPUT_DIR/app 
     - script:
@@ -47,7 +47,7 @@ build:
           ls $WERCKER_OUTPUT_DIR/app
     - script:
         name: copy config
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |
           cp appsettings*json $WERCKER_OUTPUT_DIR/app/publish
           mkdir -p $WERCKER_OUTPUT_DIR/app/publish/app/tmp
