@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using StatlerWaldorfCorp.LocationService.Models;
 using StatlerWaldorfCorp.LocationService.Persistence;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace StatlerWaldorfCorp.LocationService
 {
@@ -22,6 +24,8 @@ namespace StatlerWaldorfCorp.LocationService
         public Startup(IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             var builder = new ConfigurationBuilder()
+                .SetBasePath(System.IO.Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true)
                 .AddEnvironmentVariables()
                 .AddCommandLine(Startup.Args);
 
@@ -34,25 +38,36 @@ namespace StatlerWaldorfCorp.LocationService
             this.logger = this.loggerFactory.CreateLogger("Startup");
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public static IConfigurationRoot Configuration { get; set; }
 
-
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ILocationRecordRepository, InMemoryLocationRecordRepository>();
+            //var transient = Boolean.Parse(Configuration.GetSection("transient").Value);
+            var transient = true;
+            if (Configuration.GetSection("transient") != null)
+            {
+                transient = Boolean.Parse(Configuration.GetSection("transient").Value);
+            }
+            if (transient)
+            {
+                logger.LogInformation("Using transient location record repository.");
+                services.AddScoped<ILocationRecordRepository, InMemoryLocationRecordRepository>();
+            }
+            else
+            {
+                var connectionString = Configuration.GetSection("postgres:cstr").Value;
+                services.AddEntityFrameworkNpgsql().AddDbContext<LocationDbContext>(options =>
+                    options.UseNpgsql(connectionString));
+                logger.LogInformation("Using '{0}' for DB connection string.", connectionString);
+                services.AddScoped<ILocationRecordRepository, LocationRecordRepository>();
+            }
 
             services.AddMvc();
-
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
             app.UseMvc();
-
         }
     }
 }

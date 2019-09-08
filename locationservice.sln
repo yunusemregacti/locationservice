@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.LocationService", "StatlerWaldorfCorp.LocationService\StatlerWaldorfCorp.LocationService.csproj", "{199A0C3A-9661-4C2D-93DF-E15D639499C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatlerWaldorfCorp.LocationService", "StatlerWaldorfCorp.LocationService\StatlerWaldorfCorp.LocationService.csproj", "{199A0C3A-9661-4C2D-93DF-E15D639499C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D619A89-14EA-4BBA-B48E-34E92E2717EA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{17A5A750-31C8-4B79-ABA8-DF318F3637FE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{00D5962E-9685-4543-8E0D-CB9EEB9D52FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.LocationService.Tests", "StatlerWaldorfCorp.LocationService.Tests\StatlerWaldorfCorp.LocationService.Tests.csproj", "{D4225D31-1BE0-45D0-92CB-73D30DEDACDF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatlerWaldorfCorp.LocationService.Tests", "StatlerWaldorfCorp.LocationService.Tests\StatlerWaldorfCorp.LocationService.Tests.csproj", "{5A306858-D10F-443F-96CF-26919C494872}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,19 +19,19 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4225D31-1BE0-45D0-92CB-73D30DEDACDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4225D31-1BE0-45D0-92CB-73D30DEDACDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4225D31-1BE0-45D0-92CB-73D30DEDACDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4225D31-1BE0-45D0-92CB-73D30DEDACDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{199A0C3A-9661-4C2D-93DF-E15D639499C5}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5A306858-D10F-443F-96CF-26919C494872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A306858-D10F-443F-96CF-26919C494872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A306858-D10F-443F-96CF-26919C494872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A306858-D10F-443F-96CF-26919C494872}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{199A0C3A-9661-4C2D-93DF-E15D639499C5} = {8D619A89-14EA-4BBA-B48E-34E92E2717EA}
-		{D4225D31-1BE0-45D0-92CB-73D30DEDACDF} = {17A5A750-31C8-4B79-ABA8-DF318F3637FE}
+		{5A306858-D10F-443F-96CF-26919C494872} = {00D5962E-9685-4543-8E0D-CB9EEB9D52FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45CE90E3-125B-4633-836D-197C10FA144D}

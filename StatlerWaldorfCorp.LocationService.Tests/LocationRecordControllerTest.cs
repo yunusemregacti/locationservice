@@ -1,15 +1,14 @@
-using Xunit;
+﻿using Xunit;
 using System.Collections.Generic;
 using StatlerWaldorfCorp.LocationService.Models;
 using StatlerWaldorfCorp.LocationService.Controllers;
 using StatlerWaldorfCorp.LocationService.Persistence;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
-namespace StatlerWaldorfCorp.LocationService
+namespace StatlerWaldorfCorp.LocationService.Tests
 {
-
     public class LocationRecordControllerTest
     {
         [Fact]
