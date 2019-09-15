@@ -39,7 +39,7 @@ build:
 # integration tests
     - script:
         name: integration-migrate
-        cwd: src/StatlerWaldorfCorp.LocationService
+        cwd: StatlerWaldorfCorp.LocationService
         code: |           
            export TRANSIENT=false
            export POSTGRES__CSTR="Host=$POSTGRES_PORT_5432_TCP_ADDR"
