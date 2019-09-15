@@ -23,7 +23,6 @@ namespace StatlerWaldorfCorp.LocationService
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseStartup<Startup>()
-                .UseUrls("http://localhost:6000")
                 .UseConfiguration(config)
                 .Build();
 
