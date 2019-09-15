@@ -5,7 +5,7 @@ services:
        POSTGRES_PASSWORD: inteword
        POSTGRES_USER: integrator   
        POSTGRES_DB: locationservice
-no-response-timeout: 10
+no-response-timeout: 30
 build:
   steps: 
 # compile  
@@ -39,7 +39,7 @@ build:
 # integration tests
     - script:
         name: integration-migrate
-        cwd: StatlerWaldorfCorp.LocationService
+        cwd: src/StatlerWaldorfCorp.LocationService
         code: |           
            export TRANSIENT=false
            export POSTGRES__CSTR="Host=$POSTGRES_PORT_5432_TCP_ADDR"
