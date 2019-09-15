@@ -5,7 +5,7 @@ services:
        POSTGRES_PASSWORD: inteword
        POSTGRES_USER: integrator   
        POSTGRES_DB: locationservice
-no-response-timeout: 30
+no-response-timeout: 10
 build:
   steps: 
 # compile  
